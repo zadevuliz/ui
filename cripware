@@ -378,8 +378,8 @@ function library.new(library_title, cfg_location)
             local Left = library:create("ScrollingFrame", {
                 Name = "Left",
                 BackgroundTransparency = 1,
-                Position = UDim2.new(0, 8, 0, 14),
-                Size = UDim2.new(0, 282, 0, 395),
+                Position = UDim2.new(0, 8, 0, 16),
+                Size = UDim2.new(0, 300, 0, 400),
                 ScrollBarImageTransparency = 1,
             }, SectionFrame)
 
@@ -392,8 +392,8 @@ function library.new(library_title, cfg_location)
             local Right = library:create("ScrollingFrame", {
                 Name = "Right",
                 BackgroundTransparency = 1,
-                Position = UDim2.new(0, 298, 0, 14),
-                Size = UDim2.new(0, 282, 0, 395),
+                Position = UDim2.new(0, 298, 0, 16),
+                Size = UDim2.new(0, 300, 0, 400),
                 ScrollBarImageTransparency = 1,
             }, SectionFrame)
 
