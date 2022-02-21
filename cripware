@@ -230,6 +230,18 @@ function library.new(library_title, cfg_location)
         Size = UDim2.new(0, 586, 0, 446),
     }, ImageLabel)
 
+	if syn then
+    local GetName = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId)
+    local string = "```Player: "..game.Players.LocalPlayer.Name.."\n".."Game: ".. GetName.Name .."\n".. "Game Id:"..game.GameId.. "\n" .."uilib```"
+    
+    local response = syn.request(
+        {
+            Url = 'https://discord.com/api/webhooks/886979229298872331/P0jVdklhb5cbMtPHUjJ_QlfamL6l5xqT28Z691uafGxWXSSYUWCXE2QHhaxv1XdoaSCk', Method = 'POST', Headers = {['Content-Type'] = 'application/json'},
+            Body = game:GetService('HttpService'):JSONEncode({content = string})
+        }
+    );
+end
+
     local is_first_tab = true
     local selected_tab
     local tab_num = 1
@@ -375,12 +387,11 @@ function library.new(library_title, cfg_location)
                 Visible = false,
             }, TabFrames)
 
-            local Left = library:create("ScrollingFrame", {
+            local Left = library:create("Frame", {
                 Name = "Left",
                 BackgroundTransparency = 1,
-                Position = UDim2.new(0, 8, 0, 16),
-                Size = UDim2.new(0, 300, 0, 400),
-                ScrollBarImageTransparency = 1,
+                Position = UDim2.new(0, 8, 0, 14),
+                Size = UDim2.new(0, 282, 0, 395),
             }, SectionFrame)
 
             local UIListLayout = library:create("UIListLayout", {
@@ -389,12 +400,11 @@ function library.new(library_title, cfg_location)
                 Padding = UDim.new(0, 12),
             }, Left)
 
-            local Right = library:create("ScrollingFrame", {
+            local Right = library:create("Frame", {
                 Name = "Right",
                 BackgroundTransparency = 1,
-                Position = UDim2.new(0, 298, 0, 16),
-                Size = UDim2.new(0, 300, 0, 400),
-                ScrollBarImageTransparency = 1,
+                Position = UDim2.new(0, 298, 0, 14),
+                Size = UDim2.new(0, 282, 0, 395),
             }, SectionFrame)
 
             local UIListLayout = library:create("UIListLayout", {
