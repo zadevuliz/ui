@@ -609,7 +609,7 @@ do
             local watermark_outline = utility:Create("Frame", {Vector2.new(100,38/2-10)}, {
                 Size = utility:Size(0, text_bounds.X+20, 0, 21),
                 Position = utility:Position(0, 100, 0, 38/2-10),
-                Hidden = false,
+                Hidden = true,
                 ZIndex = 60,
                 Color = theme.outline,
                 Visible = window.watermark.visible
@@ -618,7 +618,7 @@ do
             local watermark_inline = utility:Create("Frame", {Vector2.new(1,1), watermark_outline}, {
                 Size = utility:Size(1, -2, 1, -2, watermark_outline),
                 Position = utility:Position(0, 1, 0, 1, watermark_outline),
-                Hidden = false,
+                Hidden = true,
                 ZIndex = 60,
                 Color = theme.inline,
                 Visible = window.watermark.visible
@@ -627,7 +627,7 @@ do
             local watermark_frame = utility:Create("Frame", {Vector2.new(1,1), watermark_inline}, {
                 Size = utility:Size(1, -2, 1, -2, watermark_inline),
                 Position = utility:Position(0, 1, 0, 1, watermark_inline),
-                Hidden = false,
+                Hidden = true,
                 ZIndex = 60,
                 Color = theme.light_contrast,
                 Visible = window.watermark.visible
@@ -636,7 +636,7 @@ do
             local watermark_accent = utility:Create("Frame", {Vector2.new(0,0), watermark_frame}, {
                 Size = utility:Size(1, 0, 0, 1, watermark_frame),
                 Position = utility:Position(0, 0, 0, 0, watermark_frame),
-                Hidden = false,
+                Hidden = true,
                 ZIndex = 60,
                 Color = theme.accent,
                 Visible = window.watermark.visible
@@ -648,7 +648,7 @@ do
                 Font = theme.font,
                 Color = theme.textcolor,
                 OutlineColor = theme.textborder,
-                Hidden = false,
+                Hidden = true,
                 ZIndex = 60,
                 Position = utility:Position(0, 2 + 6, 0, 4, watermark_outline),
                 Visible = window.watermark.visible
