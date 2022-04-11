@@ -981,6 +981,7 @@ do
             end
         end
         --
+        window.uibind = Enum.KeyCode.Insert
         library.began[#library.began + 1] = function(Input)
             if Input.KeyCode == window.uibind then
                 window:Fade()
