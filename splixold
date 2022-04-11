@@ -599,7 +599,7 @@ do
         end
         --
         function window:Watermark(info)
-            window.watermark = {visible = true}
+            window.watermark = {visible = false}
             --
             local info = info or {}
             local watermark_name = info.name or info.Name or info.title or info.Title or string.format("$$ Splix || uid : %u || ping : %u || fps : %u", 1, 100, 200)
@@ -609,7 +609,7 @@ do
             local watermark_outline = utility:Create("Frame", {Vector2.new(100,38/2-10)}, {
                 Size = utility:Size(0, text_bounds.X+20, 0, 21),
                 Position = utility:Position(0, 100, 0, 38/2-10),
-                Hidden = true,
+                Hidden = false,
                 ZIndex = 60,
                 Color = theme.outline,
                 Visible = window.watermark.visible
@@ -618,7 +618,7 @@ do
             local watermark_inline = utility:Create("Frame", {Vector2.new(1,1), watermark_outline}, {
                 Size = utility:Size(1, -2, 1, -2, watermark_outline),
                 Position = utility:Position(0, 1, 0, 1, watermark_outline),
-                Hidden = true,
+                Hidden = false,
                 ZIndex = 60,
                 Color = theme.inline,
                 Visible = window.watermark.visible
@@ -627,7 +627,7 @@ do
             local watermark_frame = utility:Create("Frame", {Vector2.new(1,1), watermark_inline}, {
                 Size = utility:Size(1, -2, 1, -2, watermark_inline),
                 Position = utility:Position(0, 1, 0, 1, watermark_inline),
-                Hidden = true,
+                Hidden = false,
                 ZIndex = 60,
                 Color = theme.light_contrast,
                 Visible = window.watermark.visible
@@ -636,7 +636,7 @@ do
             local watermark_accent = utility:Create("Frame", {Vector2.new(0,0), watermark_frame}, {
                 Size = utility:Size(1, 0, 0, 1, watermark_frame),
                 Position = utility:Position(0, 0, 0, 0, watermark_frame),
-                Hidden = true,
+                Hidden = false,
                 ZIndex = 60,
                 Color = theme.accent,
                 Visible = window.watermark.visible
@@ -648,7 +648,7 @@ do
                 Font = theme.font,
                 Color = theme.textcolor,
                 OutlineColor = theme.textborder,
-                Hidden = true,
+                Hidden = false,
                 ZIndex = 60,
                 Position = utility:Position(0, 2 + 6, 0, 4, watermark_outline),
                 Visible = window.watermark.visible
@@ -695,14 +695,14 @@ do
         end
         --
         function window:KeybindsList(info)
-            window.keybindslist = {visible = true, keybinds = {}}
+            window.keybindslist = {visible = false, keybinds = {}}
             --
             local info = info or {}
             --
             local keybindslist_outline = utility:Create("Frame", {Vector2.new(10,(utility:GetScreenSize().Y/2)-200)}, {
                 Size = utility:Size(0, 150, 0, 22),
                 Position = utility:Position(0, 10, 0.4, 0),
-                Hidden = true,
+                Hidden = false,
                 ZIndex = 55,
                 Color = theme.outline,
                 Visible = window.keybindslist.visible
@@ -711,7 +711,7 @@ do
             local keybindslist_inline = utility:Create("Frame", {Vector2.new(1,1), keybindslist_outline}, {
                 Size = utility:Size(1, -2, 1, -2, keybindslist_outline),
                 Position = utility:Position(0, 1, 0, 1, keybindslist_outline),
-                Hidden = true,
+                Hidden = false,
                 ZIndex = 55,
                 Color = theme.inline,
                 Visible = window.keybindslist.visible
@@ -720,7 +720,7 @@ do
             local keybindslist_frame = utility:Create("Frame", {Vector2.new(1,1), keybindslist_inline}, {
                 Size = utility:Size(1, -2, 1, -2, keybindslist_inline),
                 Position = utility:Position(0, 1, 0, 1, keybindslist_inline),
-                Hidden = true,
+                Hidden = false,
                 ZIndex = 55,
                 Color = theme.light_contrast,
                 Visible = window.keybindslist.visible
@@ -729,7 +729,7 @@ do
             local keybindslist_accent = utility:Create("Frame", {Vector2.new(0,0), keybindslist_frame}, {
                 Size = utility:Size(1, 0, 0, 1, keybindslist_frame),
                 Position = utility:Position(0, 0, 0, 0, keybindslist_frame),
-                Hidden = true,
+                Hidden = false,
                 ZIndex = 55,
                 Color = theme.accent,
                 Visible = window.keybindslist.visible
@@ -742,7 +742,7 @@ do
                 Color = theme.textcolor,
                 OutlineColor = theme.textborder,
                 Center = true,
-                Hidden = true,
+                Hidden = false,
                 ZIndex = 55,
                 Position = utility:Position(0.5, 0, 0, 5, keybindslist_outline),
                 Visible = window.keybindslist.visible
@@ -764,7 +764,7 @@ do
                     local keybind_outline = utility:Create("Frame", {Vector2.new(0,keybindslist_outline.Size.Y-1), keybindslist_outline}, {
                         Size = utility:Size(1, 0, 0, 18, keybindslist_outline),
                         Position = utility:Position(0, 0, 1, -1, keybindslist_outline),
-                        Hidden = true,
+                        Hidden = false,
                         ZIndex = 55,
                         Color = theme.outline,
                         Visible = window.keybindslist.visible
@@ -773,7 +773,7 @@ do
                     local keybind_inline = utility:Create("Frame", {Vector2.new(1,1), keybind_outline}, {
                         Size = utility:Size(1, -2, 1, -2, keybind_outline),
                         Position = utility:Position(0, 1, 0, 1, keybind_outline),
-                        Hidden = true,
+                        Hidden = false,
                         ZIndex = 55,
                         Color = theme.inline,
                         Visible = window.keybindslist.visible
@@ -782,7 +782,7 @@ do
                     local keybind_frame = utility:Create("Frame", {Vector2.new(1,1), keybind_inline}, {
                         Size = utility:Size(1, -2, 1, -2, keybind_inline),
                         Position = utility:Position(0, 1, 0, 1, keybind_inline),
-                        Hidden = true,
+                        Hidden = false,
                         ZIndex = 55,
                         Color = theme.dark_contrast,
                         Visible = window.keybindslist.visible
@@ -795,7 +795,7 @@ do
                         Color = theme.textcolor,
                         OutlineColor = theme.textborder,
                         Center = false,
-                        Hidden = true,
+                        Hidden = false,
                         ZIndex = 55,
                         Position = utility:Position(0, 4, 0, 3, keybind_outline),
                         Visible = window.keybindslist.visible
@@ -807,7 +807,7 @@ do
                         Font = theme.font,
                         Color = theme.textcolor,
                         OutlineColor = theme.textborder,
-                        Hidden = true,
+                        Hidden = false,
                         ZIndex = 55,
                         Position = utility:Position(1, -4 - utility:GetTextBounds(keybindname, theme.textsize, theme.font).X, 0, 3, keybind_outline),
                         Visible = window.keybindslist.visible
