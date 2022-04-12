@@ -440,7 +440,7 @@ do
             Color = theme.light_contrast
         });window["tab_frame"] = tab_frame
         --
-        function window:GetConfig()
+        function window:GetConfig(cfg)
             local config = {}
             --
             for i,v in pairs(library.pointers) do
@@ -452,7 +452,7 @@ do
                 end
             end
             --
-            return game:GetService("HttpService"):JSONEncode(config)
+            writefile(library.folders.configs..cfg..".cfg", game:GetService("HttpService"):JSONEncode(config))
         end
         --
         function window:LoadConfig(config)
