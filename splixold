@@ -458,9 +458,23 @@ do
         function window:LoadConfig(config)
             local config = hs:JSONDecode(readfile(config))
             --
+            --[[
             for i,v in pairs(config) do
                 if library.pointers[i] then
                     library.pointers[i]:Set(v)
+                end
+            end
+            ]]
+
+            for i,v in pairs(config) do
+                for c,d in pairs(v) do
+                    for x,z in pairs(d) do
+                        if z ~= nil then
+                            if library.pointers[i] then
+                                library.pointers[i][c][x]:Set(z)
+                            end
+                        end
+                    end
                 end
             end
         end
