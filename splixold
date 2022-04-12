@@ -456,7 +456,7 @@ do
         end
         --
         function window:LoadConfig(config)
-            local config = hs:JSONDecode(config)
+            local config = hs:JSONDecode(readfile(config))
             --
             for i,v in pairs(config) do
                 if library.pointers[i] then
